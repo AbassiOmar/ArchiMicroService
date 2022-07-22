@@ -34,6 +34,15 @@ services:
       dockerfile: UserApi/Dockerfile
     depends_on: 
       - postgresql_userdb
+
+      
+  invoiceapi:
+    image: ${DOCKER_REGISTRY-}invoiceapi
+    build:
+      context: .
+      dockerfile: Invoice/InvoiceApi/Dockerfile
+
 volumes:
   database-data:
   pgadmin:
+
