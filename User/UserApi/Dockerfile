@@ -7,10 +7,10 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-COPY ["UserApi/UserApi.csproj", "UserApi/"]
-RUN dotnet restore "UserApi/UserApi.csproj"
+COPY ["User/UserApi/UserApi.csproj", "User/UserApi/"]
+RUN dotnet restore "User/UserApi/UserApi.csproj"
 COPY . .
-WORKDIR "/src/UserApi"
+WORKDIR "/srcUser//UserApi"
 RUN dotnet build "UserApi.csproj" -c Release -o /app/build
 
 FROM build AS publish

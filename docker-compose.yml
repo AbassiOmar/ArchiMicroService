@@ -2,6 +2,9 @@ version: '3.4'
 
 services:
 
+  invoicedb: 
+    image: mcr.microsoft.com/mssql/server:2017-latest
+
   postgresql_userdb:
     image: postgres:latest
     environment:
@@ -31,7 +34,7 @@ services:
      - "1650"
     build:
       context: .
-      dockerfile: UserApi/Dockerfile
+      dockerfile: User/UserApi/Dockerfile
     depends_on: 
       - postgresql_userdb
 
