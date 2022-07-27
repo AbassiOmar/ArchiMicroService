@@ -1,6 +1,8 @@
 version: '3.4'
 
 services:
+  productdb:
+    image: mongo
 
   basketdb:
     image: redis:alpine
@@ -54,8 +56,23 @@ services:
       context: .
       dockerfile: Basket/Basket.Api/Dockerfile
 
+  apigateway:
+    image: ${DOCKER_REGISTRY-}apigateway
+    build:
+      context: .
+      dockerfile: ReverseProxy/APIGateway/Dockerfile
+
+  productapi:
+    image: ${DOCKER_REGISTRY-}productapi
+    build:
+      context: .
+      dockerfile: Product/ProductApi/Dockerfile
+
 volumes:
   database-data:
   pgadmin:
+  mongo_data:
+
+
 
 
