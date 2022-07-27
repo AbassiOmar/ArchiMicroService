@@ -2,6 +2,9 @@ version: '3.4'
 
 services:
 
+  basketdb:
+    image: redis:alpine
+
   invoicedb: 
     image: mcr.microsoft.com/mssql/server:2017-latest
 
@@ -45,7 +48,14 @@ services:
       context: .
       dockerfile: Invoice/InvoiceApi/Dockerfile
 
+  basket.api:
+    image: ${DOCKER_REGISTRY-}basketapi
+    build:
+      context: .
+      dockerfile: Basket/Basket.Api/Dockerfile
+
 volumes:
   database-data:
   pgadmin:
+
 
