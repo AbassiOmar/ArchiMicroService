@@ -35,14 +35,18 @@ services:
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
 
   invoiceapi:
+    container_name: invoiceapi
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-    ports:
-      - "8003:80"
+       - ASPNETCORE_ENVIRONMENT=Development
+       - "ConnectionStrings:OrderingConnectionString=Server=invoicedb;Database=InvoiceDb;User Id=sa;Password=Omar123456"            
     volumes:
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
-  
+    depends_on:
+      - invoicedb
+    ports:
+      - "8003:80"
+
   basket.api:
     container_name: basket.api
     environment:
@@ -71,6 +75,7 @@ services:
       - basket.api
       - productapi
       - userapi
+      - invoiceapi
     ports:
       - "8010:80"
 
