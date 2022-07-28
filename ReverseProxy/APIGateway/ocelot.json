@@ -1,5 +1,5 @@
 {
-  "Routes": [
+  "ReRoutes": [
 
     {
       "DownstreamPathTemplate": "/api/v1/Product",
@@ -7,7 +7,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "productapi",
-          "Port": 8000
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/product",
@@ -19,11 +19,37 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "productapi",
-          "Port": 8000
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/product/{id}",
       "UpstreamHttpMethod": [ "Get", "Delete" ]
+    },
+    //User Api
+    {
+      "DownstreamPathTemplate": "/api/v1/User",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "userapi",
+          "Port": 8000
+        }
+      ],
+      "UpstreamPathTemplate": "/user",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put" ]
+    },
+    //basket Api
+    {
+      "DownstreamPathTemplate": "/api/{version}/{url}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "basket.api",
+          "Port": 8000
+        }
+      ],
+      "UpstreamPathTemplate": "/basket/{url}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ]
     }
   ],
   "GlobalConfiguration": {

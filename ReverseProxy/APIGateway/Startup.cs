@@ -28,7 +28,7 @@ namespace APIGateway
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors();
-            services.AddOcelot();
+            services.AddOcelot();//.AddCacheManager(settings => settings.WithDictionaryHandle());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
