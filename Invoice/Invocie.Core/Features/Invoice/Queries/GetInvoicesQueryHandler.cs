@@ -16,7 +16,7 @@ namespace Invocie.Core.Features.Invoice.Queries
 
         public GetInvoicesQueryHandler(IInvoiceRepository invoiceRepository, IMapper mapper)
         {
-            invoiceRepository = invoiceRepository ?? throw new ArgumentNullException(nameof(invoiceRepository));
+            this.invoiceRepository = invoiceRepository ?? throw new ArgumentNullException(nameof(invoiceRepository));
             this.mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 

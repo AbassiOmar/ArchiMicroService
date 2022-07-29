@@ -8,6 +8,11 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
 COPY ["Invoice/InvoiceApi/InvoiceApi.csproj", "Invoice/InvoiceApi/"]
+COPY ["Invoice/Invocie.Core/Invocie.Core.csproj", "Invoice/Invocie.Core/"]
+COPY ["Invoice/Invoice.Domain/Invoice.Domain.csproj", "Invoice/Invoice.Domain/"]
+COPY ["CrossCuttings/EventBus/EventBus.csproj", "CrossCuttings/EventBus/"]
+COPY ["Invoice/Invoice.Infrastructure/Invoice.Infrastructure.csproj", "Invoice/Invoice.Infrastructure/"]
+COPY ["CrossCuttings/LoggingLibrary/LoggingLibrary.csproj", "CrossCuttings/LoggingLibrary/"]
 RUN dotnet restore "Invoice/InvoiceApi/InvoiceApi.csproj"
 COPY . .
 WORKDIR "/src/Invoice/InvoiceApi"

@@ -1,11 +1,10 @@
-﻿using MediatR;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Invocie.Core.Features.Invoice.Commands.CheckoutInvocie
+namespace EventBus.Events
 {
-    public class CheckoutInvoiceCommand:IRequest<int>
+    public class BasketCheckoutEvent : IntegrationBaseEvent
     {
         public string UserName { get; set; }
         public decimal TotalPrice { get; set; }

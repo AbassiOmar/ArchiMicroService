@@ -1,11 +1,11 @@
-﻿using MediatR;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace Invocie.Core.Features.Invoice.Commands.CheckoutInvocie
+namespace Basket.Api.Entities
 {
-    public class CheckoutInvoiceCommand:IRequest<int>
+    public class BasketCheckout
     {
         public string UserName { get; set; }
         public decimal TotalPrice { get; set; }
