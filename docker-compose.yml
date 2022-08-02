@@ -75,11 +75,22 @@ services:
       context: .
       dockerfile: Product/ProductApi/Dockerfile
 
+ 
+
+  spaclient:
+    image: ${DOCKER_REGISTRY-}spaclient
+    build:
+      context: .
+      dockerfile: AppClients/SPAClient/Dockerfile
+
 volumes:
   database-data:
   pgadmin:
   mongo_data:
   elasticsearch-data:
+
+
+
 
 
 
