@@ -19,7 +19,7 @@ services:
   invoicedb: 
     container_name: invoicedb
     ports:
-        - "1433:1433"
+        - "433:433"
     environment:
         SA_PASSWORD: "Omar123456"
         ACCEPT_EULA: "Y"
