@@ -1,4 +1,12 @@
 header {
   padding: 20px;
-  background-color: skyblue;
+  background-color: #3b5998 ;
+
+}
+a{
+  color: white;
+}
+
+.textlogo{
+  color: white;
 }

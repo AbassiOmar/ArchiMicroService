@@ -24,14 +24,14 @@ export class ProductClient {
 
     constructor(@Inject(HttpClient) http: HttpClient, @Optional() @Inject(PRODUCT_API_BASE_URL) baseUrl?: string) {
         this.http = http;
-        this.baseUrl = baseUrl ? baseUrl : "http://localhost:8000";
+        this.baseUrl = baseUrl ? baseUrl : "http://localhost:8010/product";
     }
 
     /**
      * @return Success
      */
     productAll(): Observable<Product[]> {
-        let url_ = this.baseUrl + "/api/v1/Product";
+        let url_ = this.baseUrl ;//+ "/api/v1/Product";
         url_ = url_.replace(/[?&]$/, "");
 
         let options_ : any = {

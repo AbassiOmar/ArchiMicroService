@@ -1,0 +1,24 @@
+<!-- <pre>
+    {{products | json}}
+  </pre> -->
+
+<table>
+    <tr>
+         <td>Name</td>
+         <td> Categorie</td>
+         <td> Summary </td>
+         <td>Description </td>
+         <td>Image </td>
+         <td>Price </td>
+    </tr>
+    
+    <tr *ngFor="let product of products">
+         <td>{{product.name}} </td>
+         <td>{{product.category}} </td>
+         <td>{{product.summary | slice:0:100 }} </td>
+         <td>{{product.description | slice:0:20 }} </td>
+         <td><img src= {{product.imageFile}} width="150" height="150" /> </td>
+         <td>{{product.price}} </td>
+    </tr>
+ </table>
+  

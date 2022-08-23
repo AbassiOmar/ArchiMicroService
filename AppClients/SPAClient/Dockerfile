@@ -20,10 +20,23 @@ COPY . .
 WORKDIR "/src/AppClients/SPAClient"
 RUN dotnet build "SPAClient.csproj" -c Release -o /app/build
 
+
+
 FROM build AS publish
 RUN dotnet publish "SPAClient.csproj" -c Release -o /app/publish
 
+#WORKDIR /app
+#COPY ["package*.json","./"]
+#RUN npm install
+#COPY . .
+#RUN npm run build
+COPY ["AppClients/SPAClient/ClientApp/package.json", "AppClients/SPAClient/ClientApp/"]
+COPY ["AppClients/SPAClient/ClientApp/package-lock.json", "AppClients/SPAClient/ClientApp/"]
+WORKDIR /src/ClientApp
+RUN npm install
+RUN npm run build -- --prod
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+
 ENTRYPOINT ["dotnet", "SPAClient.dll"]
