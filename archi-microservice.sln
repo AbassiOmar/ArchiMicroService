@@ -43,7 +43,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppClients", "AppClients", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SPAClient", "AppClients\SPAClient\SPAClient.csproj", "{987B4EAD-EF78-4230-A335-C289F34A7AE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WatchStatusApp", "AppClients\WatchStatus\WatchStatusApp\WatchStatusApp.csproj", "{C5A0C3DA-7486-4FAD-97AC-51AFC9DC2552}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WatchStatusApp", "AppClients\WatchStatus\WatchStatusApp\WatchStatusApp.csproj", "{C5A0C3DA-7486-4FAD-97AC-51AFC9DC2552}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

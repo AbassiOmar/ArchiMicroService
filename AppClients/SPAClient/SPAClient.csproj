@@ -16,9 +16,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+	  <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.0.7" />
+	  <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.0.7" />
     <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="3.1.0" />
     <PackageReference Include="AspNetCore.HealthChecks.Uris" Version="3.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.27" />
+    <PackageReference Include="Microsoft.Extensions.Http.Polly" Version="3.1.21" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.11.1" />
   </ItemGroup>
 
@@ -27,6 +30,10 @@
     <Content Remove="$(SpaRoot)**" />
     <None Remove="$(SpaRoot)**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\CrossCuttings\LoggingLibrary\LoggingLibrary.csproj" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

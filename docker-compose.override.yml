@@ -115,6 +115,7 @@ services:
   spaclient:
     ports:
        - "5104:80"
+       - "5000:80"
 
 
   watchstatusapp:
