@@ -4,11 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using EventBus.Common;
+using HealthChecks.UI.Client;
 using Invocie.Core;
 using Invoice.Infrastructure;
+using Invoice.Infrastructure.Persistence;
 using InvoiceApi.EventBusConsumers;
 using MassTransit;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
@@ -60,7 +63,8 @@ namespace InvoiceApi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Invoice.API", Version = "v1" });
             });
-
+            services.AddHealthChecks()
+               .AddDbContextCheck<InvoiceContext>();
 
         }
 
@@ -82,6 +86,11 @@ namespace InvoiceApi
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHealthChecks("/hc", new HealthCheckOptions()
+                {
+                    Predicate = _ => true,
+                    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+                });
             });
         }
     }

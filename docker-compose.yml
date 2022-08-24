@@ -83,11 +83,18 @@ services:
       context: .
       dockerfile: AppClients/SPAClient/Dockerfile
 
+  watchstatusapp:
+    image: ${DOCKER_REGISTRY-}watchstatusapp
+    build:
+      context: .
+      dockerfile: AppClients/WatchStatus/WatchStatusApp/Dockerfile
+
 volumes:
   database-data:
   pgadmin:
   mongo_data:
   elasticsearch-data:
+
 
 
 

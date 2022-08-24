@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
@@ -33,6 +35,8 @@ namespace UserApi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "User.API", Version = "v1" });
             });
+            services.AddHealthChecks()
+               .AddNpgSql(Configuration["DatabaseSettings:ConnectionString"]);
 
         }
 
@@ -58,6 +62,11 @@ namespace UserApi
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHealthChecks("/hc", new HealthCheckOptions()
+                {
+                    Predicate = _ => true,
+                    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+                });
             });
         }
     }
