@@ -19,7 +19,7 @@ services:
   invoicedb: 
     container_name: invoicedb
     ports:
-        - "433:433"
+        - "1433:1433"
     environment:
         SA_PASSWORD: "Omar123456"
         ACCEPT_EULA: "Y"
@@ -72,6 +72,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - "DatabaseSettings:ConnectionString=mongodb://productdb:27017"
+      - "ElasticConfiguration:Uri=http://elasticsearch:9200"
     depends_on:
       - productdb
     ports:

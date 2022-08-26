@@ -82,6 +82,7 @@ namespace Basket.Api.Controllers
             // remove the basket
             await this.basketService.DeleteBasket(basket.UserName);
 
+
             return Accepted();
         }
     }

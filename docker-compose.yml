@@ -5,13 +5,19 @@ services:
     image: mongo
     networks:
       webnet:
-       ipv4_address: 192.168.55.10
+       ipv4_address: 192.168.55.20
   
   basketdb:
     image: redis:alpine
+    networks:
+      webnet:
+       ipv4_address: 192.168.55.21
 
   invoicedb: 
     image: mcr.microsoft.com/mssql/server:2017-latest
+    networks:
+      webnet:
+       ipv4_address: 192.168.55.22
 
   postgresql_userdb:
     image: postgres:latest
@@ -24,6 +30,9 @@ services:
     restart: unless-stopped
     volumes: 
          - database-data:/var/lib/postgresql/data/
+    networks:
+      webnet:
+       ipv4_address: 192.168.55.23
 
   pgadmin:
     image: dpage/pgadmin4
@@ -35,6 +44,9 @@ services:
     restart : unless-stopped
     volumes:
       - pgadmin:/root/.pgadmin
+    networks:
+      webnet:
+       ipv4_address: 192.168.55.24
 
   userapi:
     image: ${DOCKER_REGISTRY-}userapi
@@ -45,14 +57,24 @@ services:
       dockerfile: User/UserApi/Dockerfile
     depends_on: 
       - postgresql_userdb
+    networks:
+      webnet:
+       ipv4_address: 192.168.55.10
 
   rabbitmq:
     image: rabbitmq:3-management-alpine
+    networks:
+      - webnet
 
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.9.2
+    networks:
+      - webnet
+
   kibana:
     image: docker.elastic.co/kibana/kibana:7.9.2
+    networks:
+      - webnet
 
   invoiceapi:
     image: ${DOCKER_REGISTRY-}invoiceapi
@@ -60,7 +82,8 @@ services:
       context: .
       dockerfile: Invoice/InvoiceApi/Dockerfile
     networks:
-     - webnet
+      webnet:
+       ipv4_address: 192.168.55.9
 
   basket.api:
     image: ${DOCKER_REGISTRY-}basketapi
@@ -68,7 +91,8 @@ services:
       context: .
       dockerfile: Basket/Basket.Api/Dockerfile
     networks:
-     - webnet
+      webnet:
+       ipv4_address: 192.168.55.11
 
   apigateway:
     image: ${DOCKER_REGISTRY-}apigateway

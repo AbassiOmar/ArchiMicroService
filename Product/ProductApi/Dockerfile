@@ -7,6 +7,7 @@ EXPOSE 80
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
 COPY ["Product/ProductApi/ProductApi.csproj", "Product/ProductApi/"]
+COPY ["CrossCuttings/LoggingLibrary/LoggingLibrary.csproj", "CrossCuttings/LoggingLibrary/"]
 RUN dotnet restore "Product/ProductApi/ProductApi.csproj"
 COPY . .
 WORKDIR "/src/Product/ProductApi"
