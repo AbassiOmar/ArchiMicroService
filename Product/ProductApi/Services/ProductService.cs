@@ -27,6 +27,7 @@ namespace ProductApi.Services
 
         public async Task <Product> GetProduct(string id)
         {
+           
             return await this.productRepository.GetProduct(id);
         }
 

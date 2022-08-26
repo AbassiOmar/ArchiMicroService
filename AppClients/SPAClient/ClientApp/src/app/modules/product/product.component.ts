@@ -22,4 +22,9 @@ export class ProductComponent implements OnInit {
     });
   }
 
+  addToBasket(event,item:Product)
+  {
+    console.log(item.category);
+  }
+
 }

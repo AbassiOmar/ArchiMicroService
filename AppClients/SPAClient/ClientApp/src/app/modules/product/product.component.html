@@ -10,6 +10,7 @@
          <td>Description </td>
          <td>Image </td>
          <td>Price </td>
+         <td>add to basket </td>
     </tr>
     
     <tr *ngFor="let product of products">
@@ -19,6 +20,7 @@
          <td>{{product.description | slice:0:20 }} </td>
          <td><img src= {{product.imageFile}} width="150" height="150" /> </td>
          <td>{{product.price}} </td>
+         <td><button value="add" (click)="addToBasket($event, product)"> Add</button></td>
     </tr>
  </table>
   

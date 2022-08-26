@@ -31,7 +31,7 @@ namespace ProductApi.Controllers
         [ProducesResponseType(typeof(IEnumerable<Product>), StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
         {
-            this.logger.LogInformation("Getting Catalog Products from url : { url} and custom property: { customPropery}", _client.BaseAddress, 6);
+          
             var products = await this.productService.GetProducts();
             return Ok(products);
         }
