@@ -3,9 +3,9 @@ FROM mcr.microsoft.com/dotnet/aspnet:3.1 AS base
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
-EXPOSE 5104
-EXPOSE 5000
-EXPOSE 60191
+#EXPOSE 5104
+#EXPOSE 5000
+#EXPOSE 60191
 FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build
 # Install NodeJs
 RUN apt-get update && \
@@ -31,7 +31,7 @@ COPY ["AppClients/SPAClient/ClientApp/package.json", "AppClients/SPAClient/Clien
 COPY ["AppClients/SPAClient/ClientApp/package-lock.json", "AppClients/SPAClient/ClientApp/"]
 COPY . .
 RUN npm install
-RUN npm run build -- --prod
+#RUN npm run build -- --prod
 
 FROM base AS final
 WORKDIR /app

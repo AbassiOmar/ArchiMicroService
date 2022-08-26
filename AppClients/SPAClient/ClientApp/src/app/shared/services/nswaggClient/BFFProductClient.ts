@@ -24,7 +24,7 @@ export class BFFProductClient {
 
     constructor(@Inject(HttpClient) http: HttpClient, @Optional() @Inject(APIBFF_BASE_URL) baseUrl?: string) {
         this.http = http;
-        this.baseUrl = baseUrl ? baseUrl : "http://localhost:60191";
+        this.baseUrl = baseUrl ? baseUrl : "";
     }
 
     /**
