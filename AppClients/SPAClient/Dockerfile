@@ -31,7 +31,7 @@ COPY ["AppClients/SPAClient/ClientApp/package.json", "AppClients/SPAClient/Clien
 COPY ["AppClients/SPAClient/ClientApp/package-lock.json", "AppClients/SPAClient/ClientApp/"]
 COPY . .
 RUN npm install
-#RUN npm run build -- --prod
+RUN npm run build -- --prod
 
 FROM base AS final
 WORKDIR /app

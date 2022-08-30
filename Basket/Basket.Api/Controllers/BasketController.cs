@@ -38,6 +38,8 @@ namespace Basket.Api.Controllers
         [ProducesResponseType(typeof(ShoppingCart), StatusCodes.Status200OK)]
         public async Task<ActionResult<ShoppingCart>> GetBasket(string userName)
         {
+            if (string.IsNullOrEmpty(userName))
+                userName = "abassi";
             var basket = await this.basketService.GetBasket(userName);
             return Ok(basket ?? new ShoppingCart(userName));
         }

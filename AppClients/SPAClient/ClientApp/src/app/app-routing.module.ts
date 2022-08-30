@@ -9,6 +9,7 @@ import { FullwidthModule } from './layouts/fullwidth/fullwidth.module';
 import { FullwidthComponent } from './layouts/fullwidth/fullwidth/fullwidth.component';
 import { ProductComponent } from './modules/product/product.component';
 import { HomeComponent } from './modules/home/home.component';
+import { BasketComponent } from './modules/basket/basket.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
       [
         { path: '', component: HomeComponent },
         {path:'posts',component:PostsComponent},
-        {path:'products',component:ProductComponent}
+        {path:'products',component:ProductComponent},
+        {path:'basket',component:BasketComponent}
       ]
   },
   {

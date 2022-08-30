@@ -8,6 +8,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { LoginComponent } from 'src/app/modules/login/login.component';
 import { ProductComponent } from 'src/app/modules/product/product.component';
+import { BasketComponent } from 'src/app/modules/basket/basket.component';
 
 
 
@@ -16,7 +17,8 @@ import { ProductComponent } from 'src/app/modules/product/product.component';
     DefaultComponent,
      HomeComponent,
     PostsComponent,
-    ProductComponent
+    ProductComponent,
+    BasketComponent
   ],
   
   imports: [

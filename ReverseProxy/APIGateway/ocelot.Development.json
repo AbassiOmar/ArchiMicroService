@@ -6,27 +6,27 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "productapi",
-          "Port": "80"
+          "Host": "192.168.55.7",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/product",
-      "UpstreamHttpMethod": [ "Get", "Post", "Put" ]
-      //"RateLimitOptions": {
-      //  "ClientWhitelist": [],
-      //  "EnableRateLimiting": true,
-      //  "Period": "5s",
-      //  "PeriodTimespan": 1,
-      //  "Limit": 1
-      //}
+      "UpstreamHttpMethod": [ "Get", "Post", "Put" ],
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "5s",
+        "PeriodTimespan": 1,
+        "Limit": 1
+      }
     },
     {
       "DownstreamPathTemplate": "/api/v1/Product/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "productapi",
-          "Port": "80"
+          "Host": "192.168.55.7",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/product/{id}",
@@ -51,8 +51,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "basket.api",
-          "Port": "80"
+          "Host": "192.168.55.11",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/Basket/{userName}",
@@ -63,8 +63,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "basket.api",
-          "Port": "80"
+          "Host": "192.168.55.11",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/Basket",
@@ -75,8 +75,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "basket.api",
-          "Port": "80"
+          "Host": "192.168.55.11",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/Basket/Checkout",
@@ -91,6 +91,6 @@
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "http://localhost:5100"
+    "BaseUrl": "http://192.168.55.6"
   }
 }

@@ -51,8 +51,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "basket.api",
-          "Port": "80"
+          "Host": "192.168.55.11",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/Basket/{userName}",
@@ -63,8 +63,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "basket.api",
-          "Port": "80"
+          "Host": "192.168.55.11",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/Basket",
@@ -75,19 +75,12 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "basket.api",
-          "Port": "80"
+          "Host": "192.168.55.11",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/Basket/Checkout",
-      "UpstreamHttpMethod": [ "POST" ],
-      "RateLimitOptions": {
-        "ClientWhitelist": [],
-        "EnableRateLimiting": true,
-        "Period": "3s",
-        "PeriodTimespan": 1,
-        "Limit": 1
-      }
+      "UpstreamHttpMethod": [ "POST" ]
     }
   ],
   "GlobalConfiguration": {

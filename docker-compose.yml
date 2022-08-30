@@ -17,7 +17,7 @@ services:
     image: mcr.microsoft.com/mssql/server:2017-latest
     networks:
       webnet:
-       ipv4_address: 192.168.55.22
+       ipv4_address: 192.168.55.19
 
   postgresql_userdb:
     image: postgres:latest

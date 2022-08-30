@@ -32,6 +32,10 @@ namespace SPAClient
               c.BaseAddress = new Uri(Configuration["ApiUrls:GatewayUri"]))
                  .AddHttpMessageHandler<LoggingDelegatingHandler>();
 
+            services.AddHttpClient<IBasketService, BasketService>(c =>
+             c.BaseAddress = new Uri(Configuration["ApiUrls:GatewayUri"]))
+                .AddHttpMessageHandler<LoggingDelegatingHandler>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SAP BackEnd", Version = "v1" });

@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { PostsComponent } from './posts/posts.component';
 import { LoginComponent } from './login/login.component';
 import { ProductComponent } from './product/product.component';
+import { BasketComponent } from './basket/basket.component';
 
 
 
