@@ -45,6 +45,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SPAClient", "AppClients\SPA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WatchStatusApp", "AppClients\WatchStatus\WatchStatusApp\WatchStatusApp.csproj", "{C5A0C3DA-7486-4FAD-97AC-51AFC9DC2552}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityProvider", "IdentityProvider", "{46DF6F2A-2654-4182-B740-62372F0CB4EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer", "IdentityProvider\IdentityServer\IdentityServer.csproj", "{48AE5422-E354-452D-BFA6-040794EA068B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -101,6 +105,10 @@ Global
 		{C5A0C3DA-7486-4FAD-97AC-51AFC9DC2552}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5A0C3DA-7486-4FAD-97AC-51AFC9DC2552}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5A0C3DA-7486-4FAD-97AC-51AFC9DC2552}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48AE5422-E354-452D-BFA6-040794EA068B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48AE5422-E354-452D-BFA6-040794EA068B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48AE5422-E354-452D-BFA6-040794EA068B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48AE5422-E354-452D-BFA6-040794EA068B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -122,6 +130,7 @@ Global
 		{0F8B1F60-DDCF-4F94-840B-A27FA58F6E58} = {7161B7E6-0988-44D6-BCA8-884439F2548D}
 		{987B4EAD-EF78-4230-A335-C289F34A7AE5} = {767A4DDB-2DB9-42D7-8EFE-7F6E2895BD3D}
 		{C5A0C3DA-7486-4FAD-97AC-51AFC9DC2552} = {767A4DDB-2DB9-42D7-8EFE-7F6E2895BD3D}
+		{48AE5422-E354-452D-BFA6-040794EA068B} = {46DF6F2A-2654-4182-B740-62372F0CB4EF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {91141B33-40A1-4A03-8737-58EF9FA945FD}

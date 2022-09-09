@@ -130,6 +130,15 @@ services:
     networks:
      - webnet
 
+  identityserver:
+    image: ${DOCKER_REGISTRY-}identityserver
+    build:
+      context: .
+      dockerfile: IdentityProvider/IdentityServer/Dockerfile
+    networks:
+      webnet:
+       ipv4_address: 192.168.55.15
+
 networks:
   webnet:
     driver : bridge 
@@ -143,6 +152,9 @@ volumes:
   pgadmin:
   mongo_data:
   elasticsearch-data:
+
+
+
 
 
 
